@@ -22,7 +22,7 @@ class HomeViewBody extends StatelessWidget {
           ),
           Text(
             "Best Salery",
-            style: Styles.titleMidium,
+            style: Styles.textStyle18,
           ),
           BestSellerListViewItem()
         ],
@@ -43,7 +43,7 @@ class BestSellerListViewItem extends StatelessWidget {
         child: Row(
           children: [
             AspectRatio(
-              aspectRatio: 2.5 / 4,
+              aspectRatio: 2.8 / 4,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
@@ -53,6 +53,19 @@ class BestSellerListViewItem extends StatelessWidget {
                 ),
               ),
             ),
+            Column(
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * .5,
+                  child: const Text(
+                    'Harry Botter and the Goblet of Fire',
+                    style: Styles.textStyle20,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                )
+              ],
+            )
           ],
         ),
       ),

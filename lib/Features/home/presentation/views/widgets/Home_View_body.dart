@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'Custom_App_Bar.dart';
 import 'Featured_ListVire.dart';
+import 'best_Seller_list_View.dart';
 import 'best_seller_listView_Item.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -10,23 +11,31 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(left: 24),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomAppBar(),
-          FeaturedBooksListView(),
-          SizedBox(
-            height: 24,
+    return const CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+            child: Padding(
+          padding: EdgeInsets.only(left: 24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomAppBar(),
+              FeaturedBooksListView(),
+              SizedBox(
+                height: 24,
+              ),
+              Text(
+                "Best Salery",
+                style: Styles.textStyle18,
+              ),
+            ],
           ),
-          Text(
-            "Best Salery",
-            style: Styles.textStyle18,
-          ),
-          BestSellerListViewItem()
-        ],
-      ),
+        )),
+        SliverFillRemaining(
+          child: BestSelsrListView(),
+        )
+      ],
     );
+    //const
   }
 }
